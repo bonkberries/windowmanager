@@ -39,3 +39,14 @@ chmod +x setup.sh
 sleep 1
 echo "polybar themes installed"
 echo "edit the polybar config to set a theme as the default"
+sleep 1
+echo "adding bspwm to startx file"
+echo >> $HOME/.xinitrc "bspwm &"
+sleep 1
+echo "everything is done, if you do 'startx' it should show bspwm now"
+sleep 1 
+echo "the terminal keybind is Super+Enter"
+echo "have fun"
+sleep 3 
+clear
+exit
