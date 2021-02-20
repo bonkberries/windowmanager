@@ -19,7 +19,23 @@ echo "configs are done"
 sleep 2
 echo ""
 echo "installing bspwm, sxhkd and polybar"
-sudo pacman -S bspwm sxhkd
+sudo pacman -S bspwm sxhkd --noconfirm
 git clone https://aur.archlinux.org/polybar.git
 cd polybar
 makepkg -si
+echo "window manager installed"
+sleep 2
+echo "installing binded programs"
+sudo pacman -S firefox nautilus xfce4-terminal rofi gnome-screenshot picom lxappearance nitrogen --noconfirm
+sleep 2
+echo "programs installed"
+echo ""
+sleep 1
+echo "installing adi1090x's polybar themes"
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+cd polybar-themes
+chmod +x setup.sh
+./setup.sh
+sleep 1
+echo "polybar themes installed"
+echo "edit the polybar config to set a theme as the default"
