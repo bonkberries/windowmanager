@@ -16,3 +16,10 @@ chmod +x $HOME/.config/bspwm/bspwmrc
 echo ""
 sleep 2
 echo "configs are done"
+sleep 2
+echo ""
+echo "installing bspwm, sxhkd and polybar"
+sudo pacman -S bspwm sxhkd
+git clone https://aur.archlinux.org/polybar.git
+cd polybar
+makepkg -si
