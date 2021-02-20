@@ -2,6 +2,7 @@
 
 echo "installing sxhkd config"
 
+mkdir $HOME/.config/
 mkdir $HOME/.config/sxhkd
 install sxhkdrc $HOME/.config/sxhkd/sxhkdrc
 
