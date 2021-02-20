@@ -10,3 +10,4 @@ echo "installing bspwm config"
 
 mkdir $HOME/.config/bspwm
 install bspwmrc $HOME/.config/bspwm/bspwmrc
+chmod +x $HOME/.config/bspwm/bspwmrc
