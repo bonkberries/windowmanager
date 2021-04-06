@@ -26,7 +26,7 @@ makepkg -si
 echo "window manager installed"
 sleep 2
 echo "installing binded programs"
-sudo pacman -S xorg-xinit xorg-server xorg-setxkbmap firefox nautilus xfce4-terminal rofi xfce4-screenshooter sddm picom lxappearance nitrogen --noconfirm
+sudo pacman -S xorg-xinit xorg-server xorg-setxkbmap firefox nautilus xfce4-terminal rofi gnome-screenshot gnome-control-center sddm picom lxappearance nitrogen --noconfirm
 sleep 2
 echo "programs installed"
 echo ""
