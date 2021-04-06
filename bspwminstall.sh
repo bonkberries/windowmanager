@@ -26,7 +26,7 @@ makepkg -si
 echo "window manager installed"
 sleep 2
 echo "installing binded programs"
-sudo pacman -S xorg-xinit xorg-server xorg-xkbmap firefox nautilus xfce4-terminal rofi xfce4-screenshot picom lxappearance nitrogen --noconfirm
+sudo pacman -S xorg-xinit xorg-server xorg-setxkbmap firefox nautilus xfce4-terminal rofi xfce4-screenshooter sddm picom lxappearance nitrogen --noconfirm
 sleep 2
 echo "programs installed"
 echo ""
@@ -42,11 +42,16 @@ echo "edit the polybar config to set a theme as the default"
 sleep 1
 echo "adding bspwm to startx file"
 echo >> $HOME/.xinitrc "bspwm &"
+echo "enabling sddm"
+sudo systemctl enable sddm
 sleep 1
-echo "everything is done, if you do 'startx' it should show bspwm now"
+echo "everything is done"
 sleep 1 
 echo "the terminal keybind is Super+Enter"
 echo "have fun"
-sleep 3 
+echo "sddm will open in 5 seconds"
+sleep 5
 clear
+sudo systemctl restart sddm
 exit
+
