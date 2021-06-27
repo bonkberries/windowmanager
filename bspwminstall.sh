@@ -18,40 +18,29 @@ sleep 2
 echo "configs are done"
 sleep 2
 echo ""
-echo "installing bspwm, sxhkd and polybar"
+echo "installing bspwm & sxhkd"
 sudo pacman -S bspwm sxhkd --noconfirm
-git clone https://aur.archlinux.org/polybar.git
-cd polybar
-makepkg -si
 echo "window manager installed"
 sleep 2
-echo "installing binded programs"
-sudo pacman -S xorg-xinit xorg-server xorg-setxkbmap firefox nautilus xfce4-terminal rofi gnome-screenshot gnome-control-center sddm picom lxappearance nitrogen --noconfirm
+echo "installing programs"
+sudo pacman -S xorg-xinit xorg-server xorg-setxkbmap thunar xfce4-terminal xfce4-panel xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin rofi gnome-screenshot lightdm lightdm-gtk-greeter picom lxappearance nitrogen --noconfirm
 sleep 2
 echo "programs installed"
 echo ""
 sleep 1
-echo "installing adi1090x's polybar themes"
-git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-cd polybar-themes
-chmod +x setup.sh
-./setup.sh
-sleep 1
-echo "polybar themes installed"
-echo "edit the polybar config to set a theme as the default"
-sleep 1
 echo "adding bspwm to startx file"
 echo >> $HOME/.xinitrc "bspwm &"
-echo "enabling sddm"
-sudo systemctl enable sddm
+chmod +x $HOME/.xinitrc
+echo "enabling lightdm"
+sudo systemctl enable lightdm
 sleep 1
 echo "everything is done"
 sleep 1 
 echo "the terminal keybind is Super+Enter"
 echo "have fun"
-echo "sddm will open in 5 seconds"
+echo "login manager will open in 5 seconds"
 sleep 5
 clear
-sudo systemctl restart sddm
+sudo systemctl restart lightdm
 exit
 
