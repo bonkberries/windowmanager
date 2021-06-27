@@ -11,6 +11,6 @@ git clone https://github.com/blackenedharmony/windowmanager
 
 cd windowmanager
 
-./bspwminstall.sh
+./bspwminstall
 
 ***
